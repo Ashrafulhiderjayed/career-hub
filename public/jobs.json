@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "title": "Account & Finance",
+      "img": "https://media.istockphoto.com/id/1285809521/photo/banking-online-concept-internet-bank.jpg?s=612x612&w=0&k=20&c=XpTHWomv_UNVxESClZjuowlLaryzPamEWLw9jXo8Kyw=",
+      "description": "300 Jobs Available"
+    },
+    {
+      "id": 2,
+      "title": "Creative Design",
+      "img": "https://www.bizllence.com/images/custom/blog11.jpg",
+      "description": "150 Jobs Available"
+    },
+    {
+      "id": 3,
+      "title": "Marketing & Sales",
+      "img": "https://www.betterteam.com/images/sales-and-marketing-manager-job-description-6000x4000-20201120.jpeg?crop=2:1,smart&width=949&dpr=2",
+      "description": "150 Jobs Available"
+    },
+    {
+      "id": 4,
+      "title": "Engineering Job",
+      "img": "https://static1.shine.com/l/m/images/blog/best_engineering_jobs_for_future.png",
+      "description": "224 Jobs Available"
+    }
+  ]
