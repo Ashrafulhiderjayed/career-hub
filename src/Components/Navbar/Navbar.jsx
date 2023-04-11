@@ -47,7 +47,7 @@ const Navbar = () => {
         </ul>
 
         {/* Last Button Section */}
-        <button className="rounded-lg p-2.5 text-white bg-indigo-500 ">Start Applying</button>
+        <button className="btn">Start Applying</button>
 
         {/* Mobile Navbar Section */}
         <div className='lg:hidden'>

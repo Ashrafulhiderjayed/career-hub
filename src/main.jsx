@@ -9,8 +9,9 @@ import {
 import Statistics from './Components/Statistics/Statistics';
 import AppliedJobs from './Components/AppliedJobs/AppliedJobs';
 import Blogs from './Components/Blogs/Blogs';
-import Header from './Components/Header/Header';
+// import Header from './Components/Header/Header';
 import JobCatagory from './Components/JobCatagory/JobCatagory';
+import FeaturedJobs from './Components/FeaturedJobs/FeaturedJobs';
 
 const router = createBrowserRouter([
   {
@@ -19,11 +20,22 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Header />,
+        element: <Statistics />,
+        // loader: () => fetch('featuredJobs.json'),
+        loader: async () => {
+          const response = await fetch('/public/featuredJobs.json');
+          const data = await response.json();
+          return {data};
+        },
       },
       {
-        path: "/statistics",
-        element: <Statistics />,
+        path: "/",
+        element: <FeaturedJobs />,
+        // loader: async () => {
+        //   const response = await fetch('featuredJobs.json');
+        //   const data = await response.json();
+        //   return {data};
+        // },
       },
       {
         path: "/statistics",
