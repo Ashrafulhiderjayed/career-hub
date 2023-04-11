@@ -27,7 +27,9 @@ const FeaturedJobs = () => {
                 ></FeaturedJobsDetails>)
             }
             </div>
-            
+            <div className='text-center'>
+                <button className='btn my-8 btn mx-auto'>View All</button>
+            </div>
         </div>
     );
 };
