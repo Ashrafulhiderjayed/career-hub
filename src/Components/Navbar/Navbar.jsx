@@ -25,6 +25,14 @@ const Navbar = () => {
               to='/'
               className={({ isActive }) => (isActive ? 'active' : 'default')}
             >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to='/statistics'
+              className={({ isActive }) => (isActive ? 'active' : 'default')}
+            >
               Statistics
             </NavLink>
           </li>
@@ -88,6 +96,14 @@ const Navbar = () => {
                   <ul className='space-y-4'>
                     <li>
                       <Link to='/' className='default'>
+                        Home
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to='/statistics'
+                        className='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-blue-400'
+                      >
                         Statistics
                       </Link>
                     </li>

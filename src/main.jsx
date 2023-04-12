@@ -6,12 +6,13 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Statistics from './Components/Statistics/Statistics';
 import AppliedJobs from './Components/AppliedJobs/AppliedJobs';
 import Blogs from './Components/Blogs/Blogs';
 // import Header from './Components/Header/Header';
-import JobCatagory from './Components/JobCatagory/JobCatagory';
 import FeaturedJobs from './Components/FeaturedJobs/FeaturedJobs';
+import FeaturedJobsViewAll from './Components/FeaturedJobsViewAll/FeaturedJobsViewAll';
+import Home from './Components/Home/Home';
+import Statistics from './Components/Statistics/Statistics';
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Statistics />,
+        element: <Home />,
         // loader: () => fetch('featuredJobs.json'),
         loader: async () => {
           const response = await fetch('/public/featuredJobs.json');
@@ -38,8 +39,18 @@ const router = createBrowserRouter([
         // },
       },
       {
+        path: "/:id",
+        element: <FeaturedJobsViewAll />,
+        loader: ({params}) => fetch('featuredJobs.json'),
+      },
+      // {
+      //   path: "/:id",
+      //   element: <FeaturedJobsViewAll />,
+      //   loader: ({params}) => fetch(`featuredJobs.json/${params.id}`),
+      // },
+      {
         path: "/statistics",
-        element: <JobCatagory />,
+        element: <Statistics />,
       },
       {
         path: "/appliedJobs",

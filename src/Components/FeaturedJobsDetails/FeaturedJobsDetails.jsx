@@ -1,9 +1,11 @@
-import { CurrencyDollarIcon, MapIcon } from '@heroicons/react/24/solid';
+// import { CurrencyDollarIcon, MapIcon } from '@heroicons/react/24/solid';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const FeaturedJobsDetails = ({job}) => {
+    console.log(job.id)
     const {company, description, experience, jobResponsibility, id, img,  salary, title} = job;
-    console.log(job)
+    // console.log(job)
     return (
         <div className="bg-white overflow-hidden rounded-lg shadow-md relative">
         {/* <img className="h-64 w-full object-cover" src={img} alt /> */}
@@ -29,7 +31,8 @@ const FeaturedJobsDetails = ({job}) => {
                 
                 <p>Salary: {salary}</p>
                 </div>
-                <button className='btn mb-2 btn'>View All</button>
+                <button className='btn mb-2 btn'><Link to={`/${job.id}`} className='btn mb-2 btn'>View All</Link>
+                </button>
                 
             </div> 
         </div>
