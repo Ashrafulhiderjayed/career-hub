@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import './FeaturedJobsViewAll.css'
+import { handleApply } from '../../../utilities/fakedb';
 
 const FeaturedJobsViewAll = () => {
     const {id} = useParams();
 
     const jobDetails = useLoaderData();
+    // console.log(jobDetails)
     const [job, setJob] = useState({});
 
     useEffect(() =>{
@@ -15,10 +17,13 @@ const FeaturedJobsViewAll = () => {
             setJob(checkData)
         }
     },[]);
-    console.log(job)
+    // console.log(job)
     
     return (
         <Link to="/id">
+            {
+                
+            }
             <div className='text-center font-bold my-8'>
              <h3>Job Details: {job.company}</h3>
             </div>
@@ -70,8 +75,7 @@ const FeaturedJobsViewAll = () => {
                     <small className='font-medium'>Address: </small>{job.address}</p>
                     </>
                     <div className='text-center my-6'>
-                    <button className='btn mb-2 btn'><Link to={`/${job.id}`} className='btn mb-2 btn w-full '> Apply Now </Link>
-                    </button>
+                    <button onClick={handleApply} className='btn mb-2 btn'>Apply Now</button>
                     </div>
                 </div>
                 

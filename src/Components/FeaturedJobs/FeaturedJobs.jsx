@@ -16,7 +16,6 @@ const FeaturedJobs = () => {
     },[])
 
 
-
     // console.log(data)
     // const jobData = useLoaderData();
     // console.log(jobData)

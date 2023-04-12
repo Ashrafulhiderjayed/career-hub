@@ -13,18 +13,21 @@ import FeaturedJobs from './Components/FeaturedJobs/FeaturedJobs';
 import FeaturedJobsViewAll from './Components/FeaturedJobsViewAll/FeaturedJobsViewAll';
 import Home from './Components/Home/Home';
 import Statistics from './Components/Statistics/Statistics';
+import ErrorPage from './Components/ErrorPage/ErrorPage';
+import fetchData from '../utilities/jobDetaiLoad';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
         element: <Home />,
         // loader: () => fetch('featuredJobs.json'),
         loader: async () => {
-          const response = await fetch('/public/featuredJobs.json');
+          const response = await fetch('/featuredJobs.json');
           const data = await response.json();
           return {data};
         },
@@ -41,7 +44,7 @@ const router = createBrowserRouter([
       {
         path: "/:id",
         element: <FeaturedJobsViewAll />,
-        loader: ({params}) => fetch('featuredJobs.json'),
+        loader: ({params}) => fetch('/featuredJobs.json'),
       },
       // {
       //   path: "/:id",
@@ -55,6 +58,7 @@ const router = createBrowserRouter([
       {
         path: "/appliedJobs",
         element: <AppliedJobs />,
+        loader: () => fetchData
       },
       {
         path: "/blogs",
