@@ -34,7 +34,11 @@ const FeaturedJobs = () => {
             }
             </div>
             <div className='text-center'>
-                <button onClick={handleShowAll} className='btn my-8 btn mx-auto'>View All</button>
+                {
+                    !showAll && (
+                        <button onClick={handleShowAll} className='btn my-8 btn mx-auto'>View All</button>
+                    )
+                }
             </div>
         </div>
     );
