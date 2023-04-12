@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import JobCatagoryDetails from '../JobCatagoryDetails/JobCatagoryDetails';
 
-const JobCatagory = ({props}) => {
+const JobCatagory = () => {
+    const [jobs, setJobs] = useState([]);
+    
+    useEffect( () =>{
+        fetch('/jobs.json')
+        .then(res => res.json())
+        .then(data => setJobs(data))
+    },[])
     
     return (
         <div className='mb-40'>
@@ -9,7 +16,7 @@ const JobCatagory = ({props}) => {
             <p className='text-center my-8'>Explore thousands of job opportunities with all the information you need. Its your future</p>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-4 lg:gap-4'>
                 {
-                    props.jobs.slice(0, showAll ? 6 : 4).map(job => <JobCatagoryDetails
+                    jobs.map(job => <JobCatagoryDetails
                         key={job.id}
                         job={job}
                     ></JobCatagoryDetails>)
